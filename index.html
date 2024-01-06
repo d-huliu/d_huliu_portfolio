@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, target-densityDpi=device-dpi, minimal-ui' />
+    <title>dhuliu</title>
+    <meta property="og:title" content="David Hu-Liu"/>
+    <meta name="description" content="David Hu-Liu 3D Portfolio"/>
+    <meta property="og:description" content="David Hu-Liu 3D Portfolio"/>
+
+    <!--Correct with your own Domain-->
+    <meta property="og:url" content="https://dhuliu.ca"/>
+    <!-- Change this project's thumbnail to the correct image-->
+    <meta property="og:image" content="https://raw.githubusercontent.com/d-huliu/dhuliu-portfolio/main/public/social/thumbnail.png"/>
+    
+    <meta name="twitter:card" content="summary"/>
+  </head>
+  <body class="light-theme">
+    <div class="experience">
+      <canvas class="experience-canvas"></canvas>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader-wrapper">
+        <div class="loading">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page" asscroll-container>
+
+      <div class="toggle-bar">
+        <div class="sun-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M12 5Q11.575 5 11.288 4.712Q11 4.425 11 4V2Q11 1.575 11.288 1.287Q11.575 1 12 1Q12.425 1 12.713 1.287Q13 1.575 13 2V4Q13 4.425 12.713 4.712Q12.425 5 12 5ZM16.95 7.05Q16.675 6.775 16.675 6.362Q16.675 5.95 16.95 5.65L18.35 4.225Q18.65 3.925 19.062 3.925Q19.475 3.925 19.775 4.225Q20.05 4.5 20.05 4.925Q20.05 5.35 19.775 5.625L18.35 7.05Q18.075 7.325 17.65 7.325Q17.225 7.325 16.95 7.05ZM20 13Q19.575 13 19.288 12.712Q19 12.425 19 12Q19 11.575 19.288 11.287Q19.575 11 20 11H22Q22.425 11 22.712 11.287Q23 11.575 23 12Q23 12.425 22.712 12.712Q22.425 13 22 13ZM12 23Q11.575 23 11.288 22.712Q11 22.425 11 22V20Q11 19.575 11.288 19.288Q11.575 19 12 19Q12.425 19 12.713 19.288Q13 19.575 13 20V22Q13 22.425 12.713 22.712Q12.425 23 12 23ZM5.65 7.05 4.225 5.65Q3.925 5.35 3.925 4.925Q3.925 4.5 4.225 4.225Q4.5 3.95 4.925 3.95Q5.35 3.95 5.625 4.225L7.05 5.65Q7.325 5.925 7.325 6.35Q7.325 6.775 7.05 7.05Q6.75 7.325 6.35 7.325Q5.95 7.325 5.65 7.05ZM18.35 19.775 16.95 18.35Q16.675 18.05 16.675 17.638Q16.675 17.225 16.95 16.95Q17.225 16.675 17.638 16.675Q18.05 16.675 18.35 16.95L19.775 18.35Q20.075 18.625 20.062 19.05Q20.05 19.475 19.775 19.775Q19.475 20.075 19.05 20.075Q18.625 20.075 18.35 19.775ZM2 13Q1.575 13 1.288 12.712Q1 12.425 1 12Q1 11.575 1.288 11.287Q1.575 11 2 11H4Q4.425 11 4.713 11.287Q5 11.575 5 12Q5 12.425 4.713 12.712Q4.425 13 4 13ZM4.225 19.775Q3.95 19.5 3.95 19.075Q3.95 18.65 4.225 18.375L5.65 16.95Q5.925 16.675 6.338 16.675Q6.75 16.675 7.05 16.95Q7.35 17.25 7.35 17.663Q7.35 18.075 7.05 18.375L5.65 19.775Q5.35 20.075 4.925 20.075Q4.5 20.075 4.225 19.775ZM12 18Q9.5 18 7.75 16.25Q6 14.5 6 12Q6 9.5 7.75 7.75Q9.5 6 12 6Q14.5 6 16.25 7.75Q18 9.5 18 12Q18 14.5 16.25 16.25Q14.5 18 12 18ZM12 16Q13.65 16 14.825 14.825Q16 13.65 16 12Q16 10.35 14.825 9.175Q13.65 8 12 8Q10.35 8 9.175 9.175Q8 10.35 8 12Q8 13.65 9.175 14.825Q10.35 16 12 16Z"/></svg>
+        </div>
+        <button class="toggle-button">
+          <div class="toggle-circle"></div>
+        </button>
+        <div class="moon-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M12 21Q8.25 21 5.625 18.375Q3 15.75 3 12Q3 8.25 5.625 5.625Q8.25 3 12 3Q12.35 3 12.688 3.025Q13.025 3.05 13.35 3.1Q12.325 3.825 11.713 4.987Q11.1 6.15 11.1 7.5Q11.1 9.75 12.675 11.325Q14.25 12.9 16.5 12.9Q17.875 12.9 19.025 12.287Q20.175 11.675 20.9 10.65Q20.95 10.975 20.975 11.312Q21 11.65 21 12Q21 15.75 18.375 18.375Q15.75 21 12 21ZM12 19Q14.2 19 15.95 17.788Q17.7 16.575 18.5 14.625Q18 14.75 17.5 14.825Q17 14.9 16.5 14.9Q13.425 14.9 11.262 12.738Q9.1 10.575 9.1 7.5Q9.1 7 9.175 6.5Q9.25 6 9.375 5.5Q7.425 6.3 6.213 8.05Q5 9.8 5 12Q5 14.9 7.05 16.95Q9.1 19 12 19ZM11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Q11.75 12.25 11.75 12.25Z"/></svg>
+        </div>
+      </div>
+      
+      <div class="page-wrapper" asscroll>
+        <section class="hero">
+          <div class="hero-wrapper">
+
+            <!-- Intro Stuff -->
+            <div class="intro-text">Welcome to my portfolio!</div>
+            <div class="arrow-svg-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="currentColor" d="M12 14.95q-.2 0-.375-.063-.175-.062-.325-.212L6.675 10.05q-.275-.275-.262-.688.012-.412.287-.687.275-.275.7-.275.425 0 .7.275l3.9 3.9 3.925-3.925q.275-.275.688-.263.412.013.687.288.275.275.275.7 0 .425-.275.7l-4.6 4.6q-.15.15-.325.212-.175.063-.375.063Z"/></svg>
+            </div>
+
+            <div class="hero-main">
+              <h1 class="hero-main-title">David Hu-Liu</h1>
+              <p class="hero-main-description">Computer Science Student</p>
+            </div>
+
+            <div class="hero-second">
+              <p class="hero-second-subheading first-sub">David Hu-Liu</p>
+              <p class="hero-second-subheading second-sub">Portfolio</p>
+            </div>
+
+          </div>
+        </section>
+
+        <div class="first-move section-margin"></div>
+
+        <section class="first-section section left">
+          <div class="progress-wrapper progress-bar-wrapper-left">
+            <div class="progress-bar"></div>
+          </div>
+
+          <div class="section-intro-wrapper">
+            <h1 class="section-title">
+              <span class="section-title-text">About Me</span>
+              <div class="section-title-decoration styleOne"></div>
+              <div class="section-title-decoration styleTwo"></div>
+              <div class="section-title-decoration styleThree"></div>
+            </h1>
+            <span class="section-number">01</span>
+          </div>
+          
+
+          <div class="section-detail-wrapper">
+            <!-- <h3 class="section-heading">Hello!</h3> -->
+            <p class="section-text">My name is David Hu-Liu, currently a freshman at the University of Waterloo studying Computer Science and Business at Wilfrid Laurier. I have a strong interest for Machine Learning and Data Science, full-stack development, Graphic/UX design, and creating products that address real-life problems. </p>
+            <br>
+            <p class="section-text">I have a fundamental understanding of the key principles in data science, along with the mathematics supporting machine learning algorithms. I am also well equipped to handle web development tasks given my previous experience, and basic projects regarding different frameworks. </p>
+            <br>
+            <p class="section-text">But it is less about what I know, and more about <em>my efforts to know.</em> 
+              I want to learn about important technologies because truthfully, software has the capacity to shape our future and address our problems. Technology has always been our bridge to a better living experience, and tomorrow will be no different. 
+              </p>
+              <br>
+            <p class="section-text"> With open arms, I seek to collaborate with others with this shared mindset. I hope to contribute to the development of something important, and believe that I am a good candidate overall. 
+              Outside of my interests in computer science, I am also passionate about fitness, philosophy/literature, and sports in general. Feel free to reach out to me in your spare time, I would love to talk to you about anything at all :)
+              </p>
+            <br>
+            <br>
+            <br>
+            <h1 id="education" margin-left="30px">EDUCATION AND CERTIFICATIONS</h1>
+            <br>
+            <br>
+            <br>
+            <p class="section-text"><img src="./public/social/uw.png" width="100" height="100"></p>
+            <br>
+            <h3 class="section-heading" id="bachelor-of-technology-in-leather-technology">Bachelor of Computer Science</h3>
+            <br>
+            <h4 class="section-text" id="-linkedin-"><a href="https://www.linkedin.com/in/david-hu-liu-98b21822a/">See More Detail Here</a></h4>
+            <br>
+            <br>
+            <p class="section-text">[ 2023  -  2028 ]</p>
+            <br>
+            <h2 class="section-heading"><strong>Harvard Pre-College Program: Mathematical Elements of Data Science and Artificial Intelligence </strong></h2>
+            <br>
+            <br>
+            <p class="section-text"><img src="./social/harvard-eval.jpg" width="600"></p>
+            <br>
+            <br>
+
+            <h2 class="section-heading"> <strong> Udemy: The Complete 2023 Web Development Bootcamp</strong> </h2>
+            <br>
+            <br>
+            <p class="section-text"><img src="./social/udemy.jpg" width="600"></p>
+
+
+          </div>
+        </section>
+
+        <div class="second-move section-margin"></div>
+
+        <section class="second-section section right">
+          <div class="progress-wrapper progress-bar-wrapper-right">
+            <div class="progress-bar blue-background"></div>
+          </div>
+
+          <div class="section-intro-wrapper blue-text blue-border">
+            <h1 class="section-title blue-text blue-border">
+              <span class="section-title-text blue-text">My Projects</span>
+              <div class="section-title-decoration styleOne blue-border"></div>
+              <div class="section-title-decoration styleTwo blue-border"></div>
+              <div class="section-title-decoration styleThree blue-background blue-border"></div>
+            </h1>
+            <span class="section-number blue-text">02</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <p class="section-text"><img src="./public/social/handpilotlogo.png" width="200" height="100"></p>
+            <h2 class="section-heading">HANDPILOT</h2>
+            <p class="section-text">In a world where communication with technology is essential, and some are less fortunate, we proposed Handpilot: Allowing Users to Navigate the computer effortlessly without the need for a mouse. Let your hands glides freely without the need to apply strain to potentially injured or painful joints. </p>
+            <p class="section-text">The software uses the OpenCV library to detect camera motion and a mathematical understanding of the way hands work in a 2d environment.</p>
+            <br>
+            <p class="section-text"><picture> <img src="./public/social/handpilotdemo.png" width="500"></picture></p>
+            <br>
+            <p class="section-text"><a href="https://devpost.com/software/handpilot" title="Devpost link">See Project Submission<img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+
+            <p class="section-text"><a href="https://github.com/d-huliu/HandPilot" title="Source Code link">See Project Source Code<img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+              
+            
+            <h2 class="section-heading">VERBATE</h2>
+            <p class="section-text">Become Interview-ready easily with Verbate. Speaking itself is a skill beyond just what you know. Practice your public speaking skills using this chatbot that allows for voice recognition. The bot will give you effective interview questions based on your job requirments and personalized prompts. It will then give you a final evaluation of how well you did on your practice interview, and how likely you are to do well in the future.</p>
+            <p class="section-text"> The project utilizes the ChatGPT-4 API as well as speach-to-text resources.</p>
+            <br>
+            <p class="section-text"><img src="./public/social/verbate1.png" width="300">  <img src="./public/social/verbate2.png" width="250">  </p> 
+            <br>
+            <p class="section-text"><img src="./public/social/verbate3.png" width="600"></p>
+            <br>
+            <p class="section-text"><a href="https://devpost.com/software/verbate" title="Devpost link">See Project Submission<img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+
+            <p class="section-text"><a href="https://github.com/d-huliu/HandPilot" title="Source Code link">See Project Source Code<img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+            <br>
+            <h2 class="section-heading">IMAGE RECOGNITION MACHINE LEARNING AI [CIFAR 10]</h2>
+            <p class="section-text">As our final assignment in my Harvard Pre-College program, we were instructed to traing our own CNN model and compete for accuracy in small groups.</p>
+            <p class="section-text">Leveraging what we learned about topology, calculus, 3D geometry, and elementary statistics our group achieved the highest accuracy (98%) in the class, by approaching the problem using a simplistic activation layer set up and our clever grayscale coversion strategy that I initially proposed.
+              The image conversion to grayscale would reduce a pixel's vector values from the range of 0-255 to just 0-1, allow for significantly easier processing after each additional convolution layer.
+            </p>
+            <br>
+            <br>
+            <p class="section-text"><img src="./public/social/cifar1.png" width="500">  </p> 
+            
+            <p class="section-text"> <img src="./public/social/cifar2.png" width="500">  </p>
+            <br>
+            <br>
+            <p class="section-text"><a href="https://docs.google.com/presentation/d/1j7Juqj_Rs17JJyI97KzjU2sM03RiIyn60FRCwZx8Yx0/edit?usp=sharing" title="Devpost link">See Project Submission<img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+
+            <p class="section-text"><a href="https://colab.research.google.com/drive/194NbDwyA74nzpk5rymKLnT7GJ3ubMXxy?usp=sharing" title="Source Code link">See Project Source Code<img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+            <br>
+            <br>
+            
+            <h2 class="section-heading">MY THREE.JS PERSONAL PORTFOLIO</h2>
+            <p class="section-text">The website you are currently reading, utilizes blender for the room model, three.js for rendering, camera logic, visual graphics, etc. and css/html for stlying and text output respectfully.</p>
+            <br>
+            <p class="section-text">I had originally tried to create an interactive room using spline 3d, in which the camera would guide the user experience like virtual reality. I had to give up on using their platform as it would not let me edit their source code after designing the room. Being inspired by the blender room design I had found, I utilized that instead and three.js to create the website you are currently on.</p>
+            <br>
+            <br>
+
+            <h2 class="section-heading">Chatbot NLTK Machine Learning AI</h2>
+            <p class="section-text">Utilizing Python's Natural Language Took Kit library and SGD optimization to create a silly language processing bot that randomizes its responses based on training data.</p>
+            <p class="section-text">For example, entering "hi, how are you", will be processed and identified as a "greeting" intention and will output any of the predetermined "greeting" responses I set. In this regard, the bot is limited to the types of intentions pretedermined by me. The maximum training accuracy I achieved was 91%.
+              I left the overall project unfinished and faulty after becoming discouraged realizing its harsh limitations. 
+            </p>
+            <br>
+            <p class="section-text"><a href="https://github.com/d-huliu/Chatbot_draft" title="CTF ROOM">See Source Code<img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+            <br>
+
+
+            <h2 class="section-heading">SKINSIGHT</h2>
+            <p class="section-text">Utilizing flask, OpenCV for image processing, pytorch and tensorflow, and html/css for front-end to create a web app that predicts the likelihood of the different types of skin cancer.  </p> 
+            <p class="section-text"> Project idea was inspired by the excruciating wait-time of the Canadian Healthcare System. By hopefully providing the opportunity for self-diagnosis, it could speed up healthcare and also contribute to smarter cancer mitigation in the future.
+              There are clear limitations for this type of output. The dataset from kaggle solely contains different examples of skin cancer, but not images that resemble cancer but are not. Implying that non-cancerous images do not yield accurate percentages. 
+            </p>
+            <br>
+            <br>
+            <p class="section-text"><img src="./public/social/skinsight.png" width="500">  </p> 
+            <br>
+            <br>
+            <p class="section-text"><a href="https://devpost.com/software/skinsight-your-virtual-dermatologist" title="Devpost link">See Project Submission<img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+
+            <p class="section-text"><a href="https://github.com/d-huliu/SkinSight-" title="Source Code link">See Project Source Code<img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+            <br>
+            <h2 class="section-heading">WhatsInThis?</h2>
+            <p class="section-text">Being someone who was super into fitness, having a clear understanding of daily micro and macros was crucial. A modern problem that persists is not knowing the nutrition of meals you have when eating out. I hope <em>WhatsInThis?</em> could provide a solution, where eventually users will be able to create an account, and save a log of the nutrition of their common meals.
+              This will enable a stress-free experience when going out, knowing exactly "What's In This?" when you order.</p>
+            <p class="section-text">Website utilizes React.js, Tailwind CSS, and the Nutrition information API from NutritionIX's dataset to create a simple website that fetches for the nutrition value of nearly any food or meal. API Requests still are not working as the project continues to be a work-in-progress.
+              Using express.js/node.js + postSQL for the back-end login and meal saving features are also still work-in-progress. 
+            </p>
+            <br>
+            <p class="section-text"><img src="./public/social/whatsinthis.png" width="500">  </p> 
+            <br>
+
+            <p class="section-text"><a href="https://github.com/d-huliu/whatsinthis-" title="CTF ROOM">See Source Code<img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+            <br>
+
+            <h2 class="section-heading">The SIMON Game</h2>
+            <p class="section-text"> Simon is a childrens Pattern Recognizing Memory Game
+              . The objective is to recite the pattern, as flashed by the different colors
+              . This project was a good opportunity to practice basic logic in js using the jquery library. A sequence is randomly generated and added to a list, and continuously checked if the users input matches it. Once the user cannot match the next sequence, the player loses. 
+              </p> 
+            <p class="section-text">
+            
+            </p>
+            <br>
+            <p class="section-text"><img src="./public/social/simon.png" width="500">  </p> 
+            <br>
+
+            <p class="section-text"><a href="https://github.com/d-huliu/SimonGame" title="CTF ROOM">See Source Code<img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+            <br>
+
+
+            <h2 class="section-heading">Permanent To Do List</h2>
+            <p class="section-text"> Using Express, Node, EJS, PostgreSQL Backend tools to develop a to-do-list that will save your information inside a database, regardless if the app is being refreshed!
+               
+              </p> 
+            <p class="section-text">
+            
+            </p>
+            <br>
+            <p class="section-text"><img src="./public/social/todolist.png" width="500">  </p> 
+            <br>
+
+            <p class="section-text"><a href="https://github.com/d-huliu/Perma-todolist" title="CTF ROOM">See Source Code<img src="https://static.licdn.com/aero-v1/sc/h/8w0vew433o9nluoruq9k5eqy" alt="External link"></a></p>
+            <br>
+
+
+          </div>
+        </section>
+        
+        <div class="third-move section-margin"></div>
+
+        <section class="third-section section left">
+          <div class="progress-wrapper progress-bar-wrapper-left">
+            <div class="progress-bar green-background"></div>
+          </div>
+
+          <div class="section-intro-wrapper green-text green-border">
+            <h1 class="section-title green-text green-border">
+              <span class="section-title-text green-text">Experience</span>
+              <div class="section-title-decoration styleOne green-border"></div>
+              <div class="section-title-decoration styleTwo green-border"></div>
+              <div class="section-title-decoration styleThree green-background green-border"></div>
+            </h1>
+            <span class="section-number green-text">03</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <p class="section-text"><img src="./public/social/yrahacks.svg" height="150" width="150"></p>
+            <p class="section-heading"><strong>York Region Hackathon: 1st Place Overall</strong> [March 2023]</p>
+            <br>
+            <p class="section-text">• Using Python & Libraries like OpenCV, Mediapipe, Pyinput, for camera detection and mouse inputs<br>• Working in a team of 3 to pitch our HandPilot branding using photoshop for design<br>• Competing against more than 250+ students across YRDSB<br> </p>
+            <br>
+            <br>
+            <p class="section-text"> <img src="./public/social/makeuc.png" height="150" width="150"></p>
+
+            <p class="section-heading"><strong>MakeUC Hackathon: Best implementation of GPT-4 or other LLMs</strong> [Nov 2023]</p>
+            <br>
+            <p class="section-text">• Utilizing Node.js, Next.js, React, JS, AWS poly/GPT-4 API to create a voice interactive chatbot.<br>• Contributed more than 150+ lines of prompting and js code.<br>•  Presented and judged in front of Professors, Software Specialists, Developers, etc.<br>• Competing against 300+ highschool-university students.</p>
+            <br>
+            <br>
+            <p class="section-heading"> <strong>LyonHacks 111: 1st Place</strong> [April 2023]</p>
+            <br>
+            <p class="section-text">• Utilizing plain js, html, css to create a full-stack, login protected code and drawing editor<br>• Collaborated in a team of 3 to deliver our product in under 36 hours.</p>
+            
+
+          </div>
+        </section>
+
+
+        <div class="fourth-move section-margin"></div>
+
+        <section class="fourth-section section right">
+          <div class="progress-wrapper progress-bar-wrapper-right">
+            <div class="progress-bar blue-background"></div>
+          </div>
+
+          <div class="section-intro-wrapper blue-text blue-border">
+            <h1 class="section-title blue-text blue-border">
+              <span class="section-title-text blue-text">CONTACT</span>
+              <div class="section-title-decoration styleOne blue-border"></div>
+              <div class="section-title-decoration styleTwo blue-border"></div>
+              <div class="section-title-decoration styleThree blue-background blue-border"></div>
+            </h1>
+            <span class="section-number blue-text">04</span>
+          </div>
+
+          <div class="section-detail-wrapper">
+            <h3 class="section-heading">Linkedin</h3>
+            <p class="section-text">If you'd like to get in touch, please feel free to connect with me on LinkedIn. On LinkedIn, I am actively trying to engage in coversation about stocks/trading algos, interactive web development, and finance in general. I am available for interviews and I look forward to connecting with other professionals in the computer science field.</p>
+            <br>
+            <p class="section-text"><a href="https://www.linkedin.com/in/david-hu-liu-98b21822a/"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&amp;logoColor=white" alt="LinkedIn"></a> </p>
+            <h3 class="section-heading">Github</h3>
+            <p class="section-text">I am an aspiring software developer or data analyst. I can be found on Github, where I am always searching for different ways to learn and share knowledge pertaining to computer science and finance. I try stay up to date with the newest technology, and continue learning whenever I can! I would love to collaborate with you!</p>
+            <br>
+            <p class="section-text"><a href="https://github.com/d-huliu"><img src="https://img.shields.io/badge/Github-12100E?logo=github&amp;logoColor=white" alt="Medium"></a> </p>
+            
+            <h3 class="section-heading">Devpost</h3>
+            <p class="section-text">I try to compete in Hackathons whenever I can. You can find any new hackathon submissions here!</p>
+            <br>
+            <p class="section-text"><a href="https://devpost.com/huliud9vid?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"><img src="./public/social/devpostlogo.png" hieght="20" width="69"></a></p>
+            <br>
+          </div>
+        </section>
+        <footer class="footer">
+          <span class="footer__copyright">Copyright &copy; 2023 - David Hu-Liu</span>
+        </footer><br><br>
+
+
+
+  
+
+      </div>
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
