@@ -1,8 +1,7 @@
 # 3D PORTFOLIO
 
-To View the hosted website, try: <br>
-dhuliu.netlify.app <br>
-dhuliu.ca
+To View the hosted website: <br>
+https://dhuliu.ca
 
 This is a remix modification of the beautiful, Award Winning: **[Bokoko33's Portfolio](https://bokoko33.me/)** 
 
