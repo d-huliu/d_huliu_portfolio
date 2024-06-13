@@ -9,6 +9,7 @@ This is a remix modification of the beautiful, Award Winning: **[Bokoko33's Port
 
 ```
 npm install
+npm install three
 npm run dev
 ```
 
